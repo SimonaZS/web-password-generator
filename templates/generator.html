@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Generador de Contraseñas</title>
+<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+  <h1>Generador de Contraseñas - Estilo Hacker</h1>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul class="messages">
+        {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  <form method="POST">
+    <label>Longitud:
+      <input type="number" name="length" value="12" min="6" max="64" required />
+    </label>
+    <label><input type="checkbox" name="uppercase" checked /> Mayúsculas</label>
+    <label><input type="checkbox" name="lowercase" checked /> Minúsculas</label>
+    <label><input type="checkbox" name="digits" checked /> Números</label>
+    <label><input type="checkbox" name="symbols" /> Símbolos</label>
+    <label><input type="checkbox" name="add_to_fav" /> Añadir a favoritos</label>
+    <button type="submit">Generar</button>
+  </form>
+
+  {% if generated_password %}
+  <div class="result">
+    <strong>Contraseña generada:</strong>
+    <p class="password">{{ generated_password }}</p>
+  </div>
+  {% endif %}
+
+  <h2>Favoritos</h2>
+  {% if favorites %}
+    <ul>
+      {% for pw in favorites %}
+        <li>{{ pw }}</li>
+      {% endfor %}
+    </ul>
+    <a href="{{ url_for('download_favorites') }}" class="btn">Descargar favoritos</a>
+    <a href="{{ url_for('clear_favorites') }}" class="btn btn-danger">Vaciar favoritos</a>
+  {% else %}
+    <p>No hay contraseñas favoritas aún.</p>
+  {% endif %}
+</div>
+</body>
+</html>

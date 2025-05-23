@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<h2>🔑 Generador de contraseñas</h2>
+<form method="POST">
+  <label>Longitud: </label>
+  <input type="number" name="length" min="6" max="30" value="12">
+  <button type="submit">Generar</button>
+</form>
+
+{% if password %}
+  <div class="generated">
+    <p>{{ password }}</p>
+    <form method="POST" action="/add_favorite">
+      <button type="submit">⭐ Guardar en favoritos</button>
+    </form>
+  </div>
+{% endif %}
+
+<a href="/favorites">Ver favoritos</a> | <a href="/logout">Cerrar sesión</a>

@@ -1,0 +1,8 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<h2>⭐ Contraseñas favoritas</h2>
+<ul>
+  {% for f in favorites %}
+    <li>{{ f }}</li>
+  {% endfor %}
+</ul>
+<a href="/download">📄 Descargar TXT</a> | <a href="/home">Volver</a>

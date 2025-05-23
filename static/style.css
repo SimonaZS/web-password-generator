@@ -1,0 +1,118 @@
+body {
+  background-color: #0f0f0f;
+  color: #33ff33;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #001100;
+  padding: 30px 40px;
+  border: 2px solid #33ff33;
+  border-radius: 8px;
+  width: 350px;
+  box-shadow: 0 0 15px #33ff33;
+  text-align: center;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+}
+
+input[type="password"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px 0;
+  background-color: #001100;
+  border: 1px solid #33ff33;
+  color: #33ff33;
+  font-size: 1em;
+  outline: none;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+button {
+  background-color: #33ff33;
+  border: none;
+  padding: 10px 15px;
+  color: #001100;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #22cc22;
+}
+
+.password {
+  background-color: #0a0a0a;
+  padding: 15px;
+  border: 1px solid #33ff33;
+  border-radius: 4px;
+  word-break: break-all;
+  font-size: 1.2em;
+  user-select: all;
+  margin-top: 10px;
+}
+
+.messages {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+.messages li {
+  margin-bottom: 5px;
+}
+
+.messages li.error {
+  color: #ff4c4c;
+}
+
+.messages li.success {
+  color: #00ff00;
+}
+
+.messages li.info {
+  color: #66ff66;
+}
+
+ul {
+  padding-left: 20px;
+  text-align: left;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+a.btn {
+  display: inline-block;
+  background: #33ff33;
+  color: #001100;
+  padding: 8px 12px;
+  margin: 10px 5px 0 0;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+a.btn-danger {
+  background: #ff4444;
+  color: white;
+}

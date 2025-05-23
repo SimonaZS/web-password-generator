@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Login Contraseña Maestra</title>
+<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+  <h1>Ingresar Contraseña Maestra</h1>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul class="messages">
+        {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  <form method="POST">
+    <input type="password" name="master_password" placeholder="Contraseña maestra" required />
+    <button type="submit">Entrar</button>
+  </form>
+  <p><a href="{{ url_for('register') }}">Crear nueva contraseña maestra</a></p>
+</div>
+</body>
+</html>
